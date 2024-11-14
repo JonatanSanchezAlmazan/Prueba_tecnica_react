@@ -1,16 +1,15 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Series from "./Pages/Series/Series";
-import Movies from "./Pages/Movies/Movies";
 import Home from "./Pages/Home/Home";
+import ContentPage from "./Pages/ContentPage/ContentPage";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/series" element={<Series />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/series" element={<ContentPage contentType="series" />} />
+        <Route path="/movies" element={<ContentPage contentType="movie" />} />
       </Routes>
     </>
   );

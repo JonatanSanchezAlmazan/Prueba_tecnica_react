@@ -4,6 +4,7 @@ const INITIAL_CONTENT_STATE = {
   loading: false,
   error: false,
   isModal: false,
+  contentType: "",
 };
 
 export const contentReducer = (state = INITIAL_CONTENT_STATE, action) => {
@@ -16,6 +17,7 @@ export const contentReducer = (state = INITIAL_CONTENT_STATE, action) => {
         loading: false,
         error: false,
         content: [...action.payload],
+        contentType: action.contentType,
       };
     case "GET_ITEM":
       return {

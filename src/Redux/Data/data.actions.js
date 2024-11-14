@@ -3,8 +3,6 @@ import store from "../store";
 const { dispatch } = store;
 
 export const getContent = async (type) => {
-  console.log(type);
-
   dispatch({ type: "LOADING" });
   try {
     const response = await fetch("/data/sample.json");
@@ -18,7 +16,7 @@ export const getContent = async (type) => {
       .slice(0, 20)
       .sort((a, b) => a.title.localeCompare(b.title));
 
-    dispatch({ type: "GET_CONTENT", payload: filteredData, contenType: type });
+    dispatch({ type: "GET_CONTENT", payload: filteredData, contentType: type });
   } catch (error) {
     dispatch({ type: "ERROR" });
   }

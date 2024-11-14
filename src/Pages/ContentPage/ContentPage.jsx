@@ -1,22 +1,20 @@
+import Modal from "../../Components/Modal/Modal";
 import { useEffect } from "react";
+import { getContent } from "../../Redux/Data/data.actions";
+import { useSelector } from "react-redux";
 import Header from "../../Components/Header/Header";
 import { Box, Heading } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import Footer from "../../Components/Footer/Footer";
 import Card from "../../Components/Card/Card";
 
-import Modal from "../../Components/Modal/Modal";
-import Footer from "../../Components/Footer/Footer";
-import { getContent } from "../../Redux/Data/data.actions";
-
-const Series = () => {
+const ContentPage = ({ contentType }) => {
   const { content, loading, error, isModal } = useSelector(
     (state) => state.content
   );
-  console.log(content);
 
   useEffect(() => {
-    getContent("series");
-  }, []);
+    getContent(contentType);
+  }, [contentType]);
 
   return (
     <>
@@ -40,11 +38,11 @@ const Series = () => {
       >
         {loading && <p className="loading">Loading...</p>}
         {error && <p className="error">Oops, something went wrong</p>}
-        {content.map((serie, index) => (
+        {content.map((item, index) => (
           <Card
             key={index}
-            src={serie.images["Poster Art"].url}
-            title={serie.title}
+            src={item.images["Poster Art"].url}
+            title={item.title}
           />
         ))}
       </Box>
@@ -54,4 +52,4 @@ const Series = () => {
   );
 };
 
-export default Series;
+export default ContentPage;
