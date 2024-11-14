@@ -1,7 +1,4 @@
+.loading,
 .error {
-  color: red;
-}
-
-.loading {
   color: #424242;
 }

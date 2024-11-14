@@ -16,7 +16,13 @@ export const getContent = async (type) => {
       .slice(0, 20)
       .sort((a, b) => a.title.localeCompare(b.title));
 
-    dispatch({ type: "GET_CONTENT", payload: filteredData, contentType: type });
+    dispatch({
+      type: "GET_CONTENT",
+      payload: filteredData,
+      contentType: type,
+    });
+
+    // dispatch({ type: "GET_CONTENT", payload: filteredData, contentType: type });
   } catch (error) {
     dispatch({ type: "ERROR" });
   }

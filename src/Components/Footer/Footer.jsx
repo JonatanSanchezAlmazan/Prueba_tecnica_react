@@ -1,7 +1,11 @@
 import { Box, Heading, Image } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const { loading } = useSelector((state) => state.content);
+  console.log(loading);
+
   return (
     <Box
       as="footer"
@@ -12,6 +16,8 @@ const Footer = () => {
       padding="20px"
       backgroundColor="#424242"
       width="100%"
+      pos={!loading ? "static" : "fixed"}
+      bottom="0"
     >
       <Box as="div" width="100%">
         <Box as="ul" display="flex" gap="20px" padding="20px" flexWrap="wrap">

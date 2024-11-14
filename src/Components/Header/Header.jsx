@@ -9,6 +9,7 @@ const Header = () => {
       bg="#007DFE"
       color="white"
       width="100%"
+      height="100%"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
@@ -19,6 +20,7 @@ const Header = () => {
       <Box
         as="ul"
         display="flex"
+        height="100%"
         alignItems="center"
         gap="30px"
         justifyContent="end"

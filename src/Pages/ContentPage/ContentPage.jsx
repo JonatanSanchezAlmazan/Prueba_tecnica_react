@@ -19,7 +19,7 @@ const ContentPage = ({ contentType }) => {
   return (
     <>
       <Header />
-      <Box as="section">
+      <Box as="section" height="100%">
         <Heading as="h5" fontSize="20px" padding="20px" bg="#424242">
           Popular Titles
         </Heading>
@@ -27,17 +27,16 @@ const ContentPage = ({ contentType }) => {
       <Box
         as="section"
         width="100%"
-        minHeight="50svh"
-        bgColor="white"
+        height="100%"
         display="flex"
-        justifyContent="center"
-        alignItems="center"
+        justifyContent={content.length > 0 ? "center" : "start"}
+        alignItems={content.length > 0 ? "center" : "start"}
         flexWrap="wrap"
         gap="50px"
         padding="20px"
       >
         {loading && <p className="loading">Loading...</p>}
-        {error && <p className="error">Oops, something went wrong</p>}
+        {error && <p className="error">Oops, something went wrong...</p>}
         {content.map((item, index) => (
           <Card
             key={index}

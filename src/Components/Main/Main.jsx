@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import CardHome from "../CradHome/CardHome";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -10,21 +10,21 @@ const Main = () => {
   };
   return (
     <>
-      <Box as="section">
+      <Box as="section" height="100%">
         <Heading as="h5" fontSize="20px" padding="20px" bg="#424242">
           Popular Titles
         </Heading>
       </Box>
       <Box
         as="main"
-        bg="white"
-        minHeight="50svh"
         padding="20px"
         display="flex"
         flexWrap="wrap"
-        justifyContent="center"
-        alignItems="center"
+        justifyContent="start"
+        alignItems="start"
         gap="20px"
+        height="100%"
+        minHeight="80svh"
       >
         <CardHome onClick={() => handleClick("/series")} title="Series" />
         <CardHome onClick={() => handleClick("/movies")} title="Movies" />

@@ -10,7 +10,13 @@ const INITIAL_CONTENT_STATE = {
 export const contentReducer = (state = INITIAL_CONTENT_STATE, action) => {
   switch (action.type) {
     case "LOADING":
-      return { ...state, loading: true, error: false, content: [] };
+      return {
+        ...state,
+        loading: true,
+        error: false,
+        content: [],
+        isModal: false,
+      };
     case "GET_CONTENT":
       return {
         ...state,
