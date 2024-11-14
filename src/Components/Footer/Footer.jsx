@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
-  const { loading } = useSelector((state) => state.content);
-  console.log(loading);
+  const { loading, error } = useSelector((state) => state.content);
+  console.log(error);
 
   return (
     <Box
@@ -16,7 +16,7 @@ const Footer = () => {
       padding="20px"
       backgroundColor="#424242"
       width="100%"
-      pos={!loading ? "static" : "fixed"}
+      pos={!loading && !error ? "static" : "fixed"}
       bottom="0"
     >
       <Box as="div" width="100%">
