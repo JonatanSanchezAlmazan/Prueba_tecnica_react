@@ -28,7 +28,7 @@ const Movies = () => {
       <Box
         as="section"
         width="100%"
-        minH="80svh"
+        minH="50svh"
         bgColor="white"
         display="flex"
         justifyContent="center"
